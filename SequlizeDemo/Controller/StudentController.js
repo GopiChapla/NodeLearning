@@ -1,5 +1,5 @@
 const Student = require("../Model/StudentModel");
-const db = require("../config");
+// const db = require("../config");
 
 const getAllStudent = (req, res) => {
   Student.findAll()
