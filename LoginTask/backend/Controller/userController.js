@@ -3,40 +3,6 @@ const db = require("../models/index");
 const user = db.User;
 const jwt = require("jsonwebtoken");
 
-// const getAuthUser = async (req, res) => {
-//   const email = req.body.email;
-//   const password = req.body.password;
-//   await user
-//     .findOne({ email: email })
-//     .then((data) => {
-//       if (data.password === password) {
-//         res.json(data);
-//       }
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
-
-// const authUser = (req, res, next) => {
-//   const bearer = req.headers["authorization"];
-
-//   const bearertoken = bearer.split(" ")[1];
-
-//   if (bearer) {
-//     req.token = bearertoken;
-//     jwt.verify(req.token, process.env.JWT_SECRET_KEY, (err, data) => {
-//       if (err) {
-//         res.send("not found");
-//       } else {
-//         next();
-//       }
-//     });
-//   } else {
-//     res.send({ message: "Token Not Found." });
-//   }
-// };
-
 //Login
 const getUser = async (req, res) => {
   const email = req.body.email;
@@ -83,6 +49,4 @@ const addUser = async (req, res) => {
 module.exports = {
   getUser,
   addUser
-  // getAuthUser,
-  // authUser
 };

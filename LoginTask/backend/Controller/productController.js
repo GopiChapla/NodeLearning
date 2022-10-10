@@ -3,19 +3,7 @@ const db = require("../models/index");
 const product = db.Product;
 const jwt = require("jsonwebtoken");
 
-// const getAllProducts = async (req, res) => {
-//   await product
-//     .findAll()
-//     .then((data) => {
-//       res.json(data);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
 const getAllProducts = async (req, res) => {
-  
-  
   await product
     .findAll()
     .then((data) => {
@@ -53,13 +41,7 @@ const addProduct = async (req, res) => {
   await product
     .create(productInfo)
     .then((data) => {
-      // jwt.sign({ data }, process.env.JWT_SECRET_KEY, (err, token) => {
-      //   if (!err) {
       res.status(201).json(data);
-      // } else {
-      //   res.send("Somthing Wrong.");
-      // }
-      // });
     })
     .catch((err) => {
       console.log(err);
